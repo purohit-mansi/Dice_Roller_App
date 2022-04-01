@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDiceCounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/draw_ripple_borderd"
+        android:clickable="true"
+        android:paddingLeft="@dimen/_16sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingRight="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_18sdp"
+        android:visibility="visible" />
+
+</LinearLayout>
