@@ -18,11 +18,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mansidev.diceroller.Models.DiceModel
 import com.mansidev.diceroller.databinding.SettingsLayoutBinding
-import com.segment.analytics.Analytics
-import com.segment.analytics.Properties
-import com.segment.analytics.core.BuildConfig
+import com.mansidev.diceroller.models.DiceModel
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var binding: SettingsLayoutBinding
@@ -34,8 +31,6 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.settings_layout)
-        Analytics.with(applicationContext)
-            .track("Settings Activty Started", Properties().putValue("Settingsscreen", true))
         binding.tvVersion.text = "Version " + BuildConfig.VERSION_NAME
 
         if (intent.extras != null) {
@@ -46,14 +41,17 @@ class SettingsActivity : AppCompatActivity() {
                 isSwtich = intent.getStringExtra("comeFromSwitch")
             }
         }
-        if (diceCount.toString().equals(null) || diceCount.toString() == "null" || diceCount.toString() == ""
+        if (diceCount.toString()
+                .equals(null) || diceCount.toString() == "null" || diceCount.toString() == ""
         ) {
             binding.tvDiceCount.text = getString(R.string.one_dice)
         } else {
             binding.tvDiceCount.text = diceCount
         }
 
-        if (isSwtich.equals("On") || isSwtich.equals("") || isSwtich.equals(null) || isSwtich.equals(
+        if (isSwtich.equals("On") || isSwtich.equals("") || isSwtich.equals(
+                null
+            ) || isSwtich.equals(
                 "null"
             )
         ) {

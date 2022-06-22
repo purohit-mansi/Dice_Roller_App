@@ -12,13 +12,11 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.mansidev.diceroller.databinding.ActivityMainBinding
-import com.segment.analytics.Analytics
-import com.segment.analytics.Properties
+import com.mansidev.diceroller.databinding.ActivityMasterBinding
 import java.util.*
 
 class MasterActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMasterBinding
     private val randomDiceGenrater = Random()
     private var diceCount: String? = null
     private var isSwtich: String? = null
@@ -27,9 +25,7 @@ class MasterActivity : AppCompatActivity() {
     private var mLastClickTime: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        Analytics.with(applicationContext)
-            .track("Master Activty Started", Properties().putValue("Masterscreen", true))
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_master)
         val sharedPreferences = getSharedPreferences(myPreferences, privateMode)
         isSwtich = sharedPreferences.getString("Swtich", "")
         diceCount = sharedPreferences.getString("Count", "")
@@ -40,10 +36,6 @@ class MasterActivity : AppCompatActivity() {
                 return@OnClickListener
             }
             mLastClickTime = SystemClock.elapsedRealtime()
-            Analytics.with(applicationContext).track(
-                "Dice Roller Clicked",
-                Properties().putValue("Masterscreen", true).putValue("Clicked", true)
-            )
 
             if (isSwtich.toString() == "On" || isSwtich.toString()
                     .equals(null) || isSwtich.toString() == "null" || isSwtich.toString() == ""
