@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity() {
 // Create an analytics client with the given context and Segment write key.
         val analytics = Analytics.Builder(
             applicationContext,
-            "FWzqAbkrHEeJSc3VSbpEK2fJQwD1QHYT"
+            "revoked"
         )
             .trackApplicationLifecycleEvents()
             .recordScreenViews()
