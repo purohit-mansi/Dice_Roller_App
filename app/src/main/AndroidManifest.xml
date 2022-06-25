@@ -33,6 +33,7 @@
             android:name=".SettingsActivity"
             android:label="@string/settings"
             android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/Theme.DiceRoller.NoTitle"
             android:windowSoftInputMode="adjustPan" />
     </application>
