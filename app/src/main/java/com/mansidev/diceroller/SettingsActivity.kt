@@ -41,6 +41,7 @@ class SettingsActivity : AppCompatActivity() {
                 isSwtich = intent.getStringExtra("comeFromSwitch")
             }
         }
+
         if (diceCount.toString()
                 .equals(null) || diceCount.toString() == "null" || diceCount.toString() == ""
         ) {
